@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <div>
       {projects.map((project) => (
-        <div key={project._id}>
+        <div key={project._id} className="text-red-500 text-2xl">
           {project.name}
         </div>
       ))}

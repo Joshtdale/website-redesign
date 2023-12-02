@@ -1,6 +1,7 @@
+import { Project } from '@/types/project'
 import { createClient, groq } from 'next-sanity'
 
-export async function getProjects() {
+export async function getProjects(): Promise<Project[]> {
     const client = createClient({
         projectId: 'rjs62vz1',
         dataset: 'production',
