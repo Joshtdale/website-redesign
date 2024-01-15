@@ -12,7 +12,7 @@ const page = {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
-            options: { source: 'name' }
+            options: { source: 'title' }
         },
     //    { 
     //         name: 'image',

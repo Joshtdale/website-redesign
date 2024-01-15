@@ -18,17 +18,29 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <title>Josh Dale</title>
-      </head>
-        <header>
-          <NavBar />
-        </header>
-      <body className={inter.className}>
-        <main>{children}</main>
-        {/* <Footer /> */}
-      </body>
-    </html>
+    <main>
+      <NavBar />
+      {children}
+      </main>
   )
 }
+// <html lang="en">
+//   <body className={inter.className}>
+//     <header>
+//       {/* <NavBar /> */}
+//       <nav>
+//         <Link href='/'> 
+//         Home
+//         </Link>
+//         <Link href='/projects'> 
+//         Projects
+//         </Link>
+//         <Link href='/blog'> 
+//         Blog
+//         </Link>
+//       </nav>
+//     </header>
+//     <main>{children}</main>
+//     <Footer />
+//   </body>
+// </html>

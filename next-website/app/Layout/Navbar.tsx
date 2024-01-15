@@ -1,15 +1,36 @@
+'use client'
 import Link from "next/link"
+import { useState, useEffect } from "react";
 import { getPages } from "@/sanity/sanity-utils"
 
-export default async function NavBar () {
-    const pages = await getPages()
-    return (
-        <nav>
-            {pages.map((page, key) => (
-                <Link key={key} href={page.slug}>
-                    {page.title}
-                </Link>
-            ))}
-        </nav>
-    )
+
+export default function NavBar() {
+
+  const [pages, setPages] = useState([]);
+
+  useEffect(() => {
+    const fetchPages = async () => {
+      try {
+        const pagesData = await getPages();
+        setPages(pagesData);
+      } catch (error) {
+        console.error("Error fetching pages:", error);
+      }
+    };
+
+    fetchPages();
+  }, []);
+console.log('test')
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        <li>
+          <Link href="/projects">projects</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
