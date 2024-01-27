@@ -16,12 +16,10 @@ export default async function Page({ params }: Props) {
             <head>
                 <title>{page?.title}</title>
             </head>
-            <body>
                 <div className="text-2xl text-red-500">
                     {page?.title}
                 </div>
 
-            </body>
         </>
     )
 }

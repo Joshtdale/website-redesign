@@ -20,17 +20,25 @@ export default function Navbar() {
 
     fetchPages();
   }, []);
-
+  // console.log(pages)
   return (
-    <nav>
-      <ul>
+    <nav className="flex bg-primary-black text-white justify-center py-6">
+      <div className="w-full max-w-7xl flex">
+      <div className="w-full">Josh Dale</div>
+      <ul className="flex justify-between w-full">
         <li>
           <Link href="/">Home</Link>
         </li>
-        <li>
-          <Link href="/projects">projects</Link>
-        </li>
+        {pages.map((page, key) => (
+          <li key={key}>
+            <Link
+              href={page.slug}>
+              {page.title}
+            </Link>
+          </li>
+        ))}
       </ul>
+      </div>
     </nav>
   );
 }
