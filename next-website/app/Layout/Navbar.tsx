@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getPages } from "@/sanity/sanity-utils"
 
 
-export default function NavBar() {
+export default function Navbar() {
 
   const [pages, setPages] = useState([]);
 
@@ -20,7 +20,7 @@ export default function NavBar() {
 
     fetchPages();
   }, []);
-console.log('test')
+
   return (
     <nav>
       <ul>
