@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav className="flex bg-primary-black text-white justify-center py-6">
       <div className="w-full max-w-7xl flex">
-      <div className="w-full">Josh Dale</div>
+      <h1 className="w-full text-2xl">Josh Dale</h1>
       <ul className="flex justify-between w-full">
         <li>
           <Link href="/">Home</Link>

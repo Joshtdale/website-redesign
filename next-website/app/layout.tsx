@@ -3,7 +3,6 @@ import Navbar from './Layout/Navbar'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Footer from './Layout/Footer'
-import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,10 +17,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className='bg-primary-black'>
       <body className={inter.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )
