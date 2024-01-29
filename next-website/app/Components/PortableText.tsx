@@ -1,6 +1,6 @@
 
-// import { type z } from "zod"
-// import { type SanityPortableText } from "../_schemas/landingPage";
+import { type z } from "zod"
+import { PortableTextType } from "@/types/portableText";
 import { PortableText as SanityText, type PortableTextComponents } from "@portabletext/react"
 import 'src/styles/PortableText/styles.css'
 
@@ -9,7 +9,6 @@ const components: PortableTextComponents = {
     marks: {
         link: ({ value, children }) => {
             const target = (value?._ref || '').startsWith('http') ? '_blank' : undefined;
-            console.log('link is', value, 'target -', target)
             return <a href={value?.href} target={target}>
                 {children}
             </a>
@@ -18,7 +17,7 @@ const components: PortableTextComponents = {
 }
 
 export const PortableText = ({ content }: {
-    content: z.infer<typeof SanityPortableText>;
+    content: z.infer<typeof PortableTextType>;
 }) => (
     <div key={content._key} className={`prose listStyle ${content.customStyles ? content.customStyles : ''}`}>
         <SanityText

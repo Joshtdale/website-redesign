@@ -1,4 +1,4 @@
-const PageContent = (element) => {
+export const PageContent = (element) => {
     switch (element?._type) {
         case 'portableText': return <div key={element._key} className={`prose ${element.customStyles ?? ""}`}>
       <PortableText
@@ -8,5 +8,3 @@ const PageContent = (element) => {
     </div>;
     }
 }
-
-export default PageContent

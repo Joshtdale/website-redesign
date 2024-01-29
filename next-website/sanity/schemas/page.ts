@@ -1,3 +1,5 @@
+import { customStyles } from "./pageElements/customStyles"
+
 const page = {
     name: 'page',
     title: 'Pages',
@@ -13,6 +15,11 @@ const page = {
             title: 'Slug',
             type: 'slug',
             options: { source: 'title' }
+        },
+        customStyles,
+        {
+            name: 'content',
+            type: 'contentBlock'
         },
     //    { 
     //         name: 'image',
