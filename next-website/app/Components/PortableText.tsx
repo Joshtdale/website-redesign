@@ -2,7 +2,7 @@
 import { type z } from "zod"
 import { PortableTextType } from "@/types/portableText";
 import { PortableText as SanityText, type PortableTextComponents } from "@portabletext/react"
-import 'src/styles/PortableText/styles.css'
+import '../styles/PortableText/styles.css'
 
 
 const components: PortableTextComponents = {

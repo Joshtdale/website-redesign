@@ -8,7 +8,7 @@ export const pageElements = {
         { type: 'contentBlock' },
         { type: 'reference', name:'contentBlockReference', to: [{ type: 'contentBlock' }] },
         { type: 'portableText' },
-        // { ...img, title: 'Image' },
+        { ...img, title: 'Image' },
         // {type:"link"},
         // {type:'tab'},
         // {type:'contactUs'},

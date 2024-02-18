@@ -10,11 +10,11 @@ export const img = defineField({
         type: 'string',
         title: 'Alt'
       },
-      { 
-        name: 'link',
-        type: 'link',
-        title: 'Link'
-      },
+      // { 
+      //   name: 'link',
+      //   type: 'link',
+      //   title: 'Link'
+      // },
       {
         name: 'height',
         type: 'number',

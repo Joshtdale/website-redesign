@@ -56,7 +56,8 @@ export async function getPage(slug: string): Promise<Page> {
             _id,
             _createdAt,
             title,
-            'slug': slug.current
+            'slug': slug.current,
+            ...
         }`,
         { slug }
 

@@ -18,9 +18,10 @@ const page = {
         },
         customStyles,
         {
-            name: 'content',
-            type: 'contentBlock'
-        },
+            title: 'Content',
+            name: 'pageElements',
+            type: 'pageElements',
+          }
     //    { 
     //         name: 'image',
     //         title: 'Image',
