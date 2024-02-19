@@ -11,8 +11,7 @@ export const PageContent = (elements) => {
         return (
         <div key={element._key} className={`prose ${element.customStyles ?? ""}`}>
           <PortableText
-            value={element.content}
-            // components={components}
+            content={element.content}
           />
         </div>
         )
