@@ -1,10 +1,10 @@
+import { urlForImage } from "@/sanity/hooks/image";
 import { PageContent } from "./pageContent"
 // import { type PageElementsSchemaUnion } from "../_schemas/landingPage"
 import { type z } from "zod"
-import { urlForImage } from "ussf-studio/lib/image";
 
 type Props = {
-    _type: string;
+    _type?: string;
     content?: any;
     customStyles?: string;
     title?: string | null;
@@ -22,6 +22,7 @@ type Props = {
 
 export const ContentBlock: React.FC<Props> = (props) => {
     const { content, customStyles, preview, bgImage } = props;
+    console.log(props)
     const bgImageUrl = bgImage?.asset && urlForImage(bgImage.asset).url();
     // if (_ref) {
     //     const preview = draftMode().isEnabled
@@ -37,8 +38,8 @@ export const ContentBlock: React.FC<Props> = (props) => {
             backgroundPosition: 'center', /* Center the image */
             backgroundRepeat: ' no-repeat', /* Do not repeat the image */
             backgroundSize: 'cover', /* Resize the background image to cover the entire container */
-        } : {}} className={`${customStyles ?? ''}`}>
-            <PageContent {...{ content, preview }} />
+        } : {}} className={`${content.customStyles ?? ''}`}>
+            <PageContent elements={content.content} />
         </div>
     );
 }

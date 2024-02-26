@@ -6,7 +6,6 @@ export const pageElements = {
     type: "array",
     of: [
         { type: 'contentBlock' },
-        { type: 'reference', name:'contentBlockReference', to: [{ type: 'contentBlock' }] },
         { type: 'portableText' },
         { ...img, title: 'Image' },
         // {type:"link"},

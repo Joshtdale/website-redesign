@@ -1,5 +1,4 @@
 import { getPage } from "@/sanity/sanity-utils";
-import Head from "next/head";
 import { PageContent } from "../Components/pageContent";
 
 type Props = {
@@ -12,9 +11,6 @@ export default async function Page({ params }: Props) {
     console.log(page?.pageElements)
     return (
         <>
-            <head>
-                <title>{page?.title}</title>
-            </head>
             <div className="text-2xl text-red-500">
                 {page?.title}
             </div>

@@ -30,11 +30,11 @@ export const img = defineField({
         type: 'string',
         title: 'Custom Styles'
       },
-      // {
-      //   name: 'figureStyles',
-      //   type: 'string',
-      //   title: 'Figure Styles',
-      //   description: 'Some styles should not be applied directly to the image, e.g. width styles. Add those here.'
-      // },
+      {
+        name: 'figureStyles',
+        type: 'string',
+        title: 'Figure Styles',
+        description: 'Some styles should not be applied directly to the image, e.g. width styles. Add those here.'
+      },
     ]
   });
