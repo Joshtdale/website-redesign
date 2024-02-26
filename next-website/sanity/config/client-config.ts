@@ -1,6 +1,8 @@
+import { env } from "process";
+
 const config = {
-    projectId: 'rjs62vz1',
-    dataset: 'production',
+    projectId: env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
     apiVersion: '2023-11-19'
 };
 

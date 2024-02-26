@@ -22,16 +22,7 @@ type Props = {
 
 export const ContentBlock: React.FC<Props> = (props) => {
     const { content, customStyles, preview, bgImage } = props;
-    console.log(props)
     const bgImageUrl = bgImage?.asset && urlForImage(bgImage.asset).url();
-    // if (_ref) {
-    //     const preview = draftMode().isEnabled
-    //         ? { token: env.SANITY_API_READ_TOKEN }
-    //         : undefined;
-    //     console.log('Found a document _ref; fetching document');
-    //     const data = await getCachedClient(preview)(refQuery, { _ref }) as unknown;
-    //     console.log('_ref data:', data);
-    // }
     return (
         <div style={bgImageUrl ? {
             backgroundImage: `url(${bgImageUrl})`,
