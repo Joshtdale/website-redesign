@@ -8,7 +8,7 @@ export default async function Home() {
 
   console.log(pages)
   return (
-    <main>
+    <main className="text-white">
       {projects.map((project) => (
         <div key={project._id} className="text-red-500 text-2xl">
           {project.name}

@@ -1,4 +1,3 @@
-// this will eventually be the dynamic page router
 import { getPage } from "@/sanity/sanity-utils";
 import Head from "next/head";
 import { PageContent } from "../Components/pageContent";
