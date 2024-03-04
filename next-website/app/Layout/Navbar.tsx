@@ -1,26 +1,27 @@
-'use client'
+// 'use client'
 import Link from "next/link"
 import { useState, useEffect } from "react";
 import { getPages } from "@/sanity/sanity-utils"
 
 
-export default function Navbar() {
+export default async function Navbar() {
 
-  const [pages, setPages] = useState([]);
+  // const [pages, setPages] = useState([]);
+  const pages = await getPages();
 
-  useEffect(() => {
-    const fetchPages = async () => {
-      try {
-        const pagesData = await getPages();
-        setPages(pagesData);
-      } catch (error) {
-        console.error("Error fetching pages:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchPages = async () => {
+  //     try {
+        // const pagesData = await getPages();
+  //       setPages(pagesData);
+  //     } catch (error) {
+  //       console.error("Error fetching pages:", error);
+  //     }
+  //   };
 
-    fetchPages();
-  }, []);
-  // console.log(pages)
+  //   fetchPages();
+  // }, []);
+  console.log(pages)
   return (
     <nav className="flex bg-primary-black text-white justify-center py-6">
       <div className="w-full max-w-7xl flex">
