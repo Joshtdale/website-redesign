@@ -1,7 +1,10 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { draftMode } from 'next/headers';
 
-export default function preview(req: NextApiRequest, res: NextApiResponse) {
-    res.clearPreviewData();
-    res.writeHead(307, { location: "/",});
-    res.end();
+import { redirect } from 'next/navigation';
+import { NextRequest } from 'next/server';
+
+export function GET(request: NextRequest) {
+    const slug = request.nextUrl.searchParams.get('slug');
+    draftMode().disable();
+    redirect(slug ?? '/');
 }
