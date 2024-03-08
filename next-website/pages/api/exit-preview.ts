@@ -1,10 +1,13 @@
-import { draftMode } from 'next/headers';
+import { NextApiRequest, NextApiResponse } from "next";
 
-import { redirect } from 'next/navigation';
-import { NextRequest } from 'next/server';
-
-export function GET(request: NextRequest) {
-    const slug = request.nextUrl.searchParams.get('slug');
-    draftMode().disable();
-    redirect(slug ?? '/');
+export default function handler (
+    req: NextApiRequest,
+    res: NextApiResponse
+) {
+    const slug = req.query.slug;
+    res.setDraftMode({ enable: false })
+    res.writeHead(307, { Location: typeof slug === 'string' ? slug : '/' })
+    res.end()
+    // res.setPreviewData({});
+    // res.redirect(typeof slug === 'string' ? slug : '/')
 }
