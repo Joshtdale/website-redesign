@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@sanity/preview-kit": "^5.0.30",
     "next-sanity": "^8.1.3"
   }
 }
