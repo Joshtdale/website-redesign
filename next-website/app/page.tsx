@@ -1,26 +1,36 @@
 import { getPages, getProjects } from "@/sanity/sanity-utils"
 import {draftMode} from 'next/headers'
+import RootLayout from "./layout";
+import { SanityDocument } from "next-sanity";
+import { PAGE_QUERY } from "@/lib/queries";
+import { loadQuery } from "@/lib/store";
+
+
 export default async function Home() {
 
-  const projects = await getProjects();
+  // const projects = await getProjects();
 
-  const pages = await getPages();
+  // const pages = await getPages();
 
-  console.log(draftMode().isEnabled)
+  const initial = await loadQuery<SanityDocument[]>(PAGE_QUERY);
+
+  // console.log(draftMode().isEnabled)
   return (
+    <RootLayout>
     <main className="text-white">
-      {projects.map((project) => (
+      {/* {projects.map((project) => (
         <div key={project._id} className="text-red-500 text-2xl">
           {project.name}
         </div>
-      ))}
+      ))} */}
       <h1>the pages are</h1>
-      {pages.map((page) => (
+      {initial.data.map((page) => (
         <div key={page._id} className="text-blue-500 text-2xl">
           {page.title}
         </div>
       ))}
     </main>
+    </RootLayout>
   )
 }
 // import { draftMode } from 'next/headers'

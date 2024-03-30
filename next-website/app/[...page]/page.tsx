@@ -1,7 +1,7 @@
 import { getPage } from "@/sanity/sanity-utils";
 import { PageContent } from "../Components/pageContent";
 import { headers } from 'next/headers';
-import Head from "next/head";
+import Layout from "../layout";
 
 type Props = {
     params: { page: string };
@@ -9,7 +9,7 @@ type Props = {
 
 export function generateMetadata(title: string) {
     return {
-        title: `Josh Dale | ${title}`
+        title: `${title} | Josh Dale`
     };
 }
 
@@ -24,7 +24,7 @@ export default async function Page({ params }: Props) {
         metadata = generateMetadata(page.title); // Create metadata object
     }
     return (
-        <>
+        <Layout>
          {/* Set page title in the document head if metadata exists */}
          {metadata && (
                 <head>
@@ -37,6 +37,6 @@ export default async function Page({ params }: Props) {
             {<PageContent elements={page?.pageElements} />}
             {/* {previewData() } */}
 
-        </>
+        </Layout>
     )
 }
