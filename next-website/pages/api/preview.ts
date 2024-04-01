@@ -12,7 +12,7 @@
 //     // res.redirect(typeof slug === 'string' ? slug : '/')
 // }
 
-export default function handler(req, res) {
-    res.setPreviewData({})
-    res.end('Preview mode enabled')
-  }
+// export default function handler(req, res) {
+//     res.setPreviewData({})
+//     res.end('Preview mode enabled')
+//   }
