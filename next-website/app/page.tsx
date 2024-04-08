@@ -12,7 +12,7 @@ export default async function Home() {
 
   // const pages = await getPages();
 
-  const initial = await loadQuery<SanityDocument[]>(PAGE_QUERY);
+  const initial = await loadQuery<SanityDocument[]>(PAGE_QUERY); //params need to be added
 
   // console.log(draftMode().isEnabled)
   return (

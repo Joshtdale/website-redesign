@@ -15,9 +15,11 @@ export function generateMetadata(title: string) {
 }
 
 export default async function Page() {
-    const page = await loadQuery<SanityDocument[]>(PAGE_QUERY, {}, {
-        perspective: draftMode().isEnabled ? "previewDrafts" : "published",
-    });
+    //params need to be added
+    // const page = await loadQuery<SanityDocument[]>(PAGE_QUERY, {}, {
+    //     perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+    // });
+    const page = getPage('/contact')
 
     let metadata = null; // Initialize metadata variable
 
